@@ -1,4 +1,4 @@
-## step 一
+## step 1
  1. mkdir react-0-1-build & cd react-0-1-build
  2. touch README.md
  3. npm init -y
