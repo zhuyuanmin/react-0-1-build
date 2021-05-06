@@ -1,4 +1,4 @@
-## step 1
+## step 1 (webpack 基本配置)
  1. mkdir react-0-1-build & cd react-0-1-build
  2. touch README.md
  3. npm init -y
@@ -10,3 +10,10 @@
 
  10. yarn add webpack webpack-cli -D
  11. npx webpack --config ./config/webpack.dev.config.js
+
+
+## step 2 (别名、后缀、无需引入React、路由、webpack-dev-server)
+  1. yarn add @babel/core @babel/preset-env @babel/preset-react babel-loader @babel/plugin-transform-runtime -D
+  2. touch .babelrc
+  3. yarn add @babel/runtime react-router-dom -S
+  4. yarn add webpack-dev-server -D
