@@ -15,5 +15,5 @@
 ## step 2 (别名、后缀、无需引入React、路由、webpack-dev-server)
   1. yarn add @babel/core @babel/preset-env @babel/preset-react babel-loader @babel/plugin-transform-runtime -D
   2. touch .babelrc
-  3. yarn add @babel/runtime react-router-dom -S
+  3. yarn add react-router-dom -S
   4. yarn add webpack-dev-server -D
