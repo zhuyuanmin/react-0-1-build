@@ -17,3 +17,4 @@
   2. touch .babelrc
   3. yarn add react-router-dom -S
   4. yarn add webpack-dev-server -D
+  5. script: webpack serve --config ./config/webpack.dev.config.js
