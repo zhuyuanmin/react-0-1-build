@@ -11,6 +11,7 @@ const happyThreadPool = HappyPack.ThreadPool({
 })
 
 module.exports = {
+  cache: true,
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx'],
     alias: {
