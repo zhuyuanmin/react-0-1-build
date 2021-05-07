@@ -1,7 +1,21 @@
-import { PureComponent } from 'react'
+import { Component } from 'react'
+import './index.css'
+import style from './index.module.css'
 
-export default class Home extends PureComponent {
+export default class Home extends Component {
+  componentDidMount() {
+    fetch('/api')
+  }
+
   render() {
-    return <div>this is home~ 啊啊啊</div>
+    return (
+      <>
+        <div className={style['page-box']}>
+          <span>this is home~ 啊啊啊</span>
+          <p className="content-box">no css modules</p>
+        </div>
+        <span className="content-box">no css modules</span>
+      </>
+    )
   }
 }

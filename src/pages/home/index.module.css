@@ -1,0 +1,7 @@
+.page-box {
+  border: 1px solid red;
+  display: flex;
+}
+.page-box :global(.content-box) {
+  color: green;
+}

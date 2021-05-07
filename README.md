@@ -13,8 +13,28 @@
 
 
 ## step 2 (别名、后缀、无需引入React、路由、webpack-dev-server)
-  1. yarn add @babel/core @babel/preset-env @babel/preset-react babel-loader @babel/plugin-transform-runtime -D
+  1. yarn add
+    @babel/core
+    @babel/preset-env
+    @babel/preset-react
+    babel-loader
+    @babel/plugin-transform-runtime
+    @babel/plugin-proposal-class-properties
+  -D
   2. touch .babelrc
   3. yarn add react-router-dom -S
   4. yarn add webpack-dev-server -D
   5. script: webpack serve --config ./config/webpack.dev.config.js
+
+## step 3 (开发代理、source-map、redux、处理html、处理css、处理 svg、其他类型、按需加载、提取css、打包加速、打包分析报告、配置抽离合并)
+  1. yarn add redux react-redux redux-thunk -S
+  2. yarn add html-webpack-plugin clean-webpack-plugin -D
+  3. yarn add (style-loader) css-loader -D
+  4. yarn add postcss-loader postcss-cssnext -D
+  5. yarn add url-loader file-loader -D
+  6. yarn add react-loadable -D
+  7. yarn add mini-css-extract-plugin optimize-css-assets-webpack-plugin -D
+  8. yarn add happypack webpack-bundle-analyzer -D
+  9. yarn add react-svg -S
+  10. yarn add webpack-merge -D
+  11. script: webpack --config ./config/webpack.prod.config.js

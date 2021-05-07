@@ -1,40 +1,36 @@
 const path = require('path')
-const webpack = require('webpack')
+const { merge } = require('webpack-merge') // 合并配置项
 
-module.exports = {
-  entry: path.join(__dirname, '../src/index.js'),
+const baseWebpackConfig = require('./webpack.common.config')
+
+const resolve = dir => path.resolve(__dirname, dir)
+
+module.exports = merge(baseWebpackConfig, {
   mode: 'development',
+  entry: resolve('../src/index.js'),
+  devtool: 'inline-source-map',
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'bundle.js',
-  },
-  resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx'],
-    alias: {
-      '@': path.join(__dirname, '../src'),
-    },
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|ts|jsx|tsx)$/,
-        use: ['babel-loader?cacheDirectory=true'],
-        exclude: /(node_modules|bower_components)/,
-        // include: path.join(__dirname, '../src')
-      },
-    ],
+    path: resolve('../dist'),
+    filename: 'js/[contenthash:16].[name].js',
   },
   devServer: {
-    contentBase: path.join(__dirname, '../dist'),
+    publicPath: '/',
     compress: true, // gzip压缩
     host: 'localhost', // 允许ip访问
+    open: true, // 打开浏览器
     hot: true, // 热更新
+    quiet: true, // 不显示webpack的错误或警告
     historyApiFallback: true, // 解决启动后刷新404
     port: 8080, // 端口
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        pathRewrite: {
+          '^/api': '/',
+        },
+        changeOrigin: true,
+      },
+    },
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      React: 'react',
-    }),
-  ],
-}
+  plugins: [],
+})

@@ -1,14 +1,13 @@
 import { Route, Switch } from 'react-router-dom'
-
-// 引入页面
-import Home from '../pages/home'
-import Page from '../pages/page'
+import loadable from '@/utils/loadable'
 
 // 路由
 const getRouter = () => (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/page" component={Page} />
+    <Route exact path="/" component={loadable('/home')} />
+    <Route path="/page" component={loadable('/page')} />
+    <Route path="/counter" component={loadable('/counter')} />
+    <Route component={() => <div>404 NotFound !</div>}/>
   </Switch>
 )
 

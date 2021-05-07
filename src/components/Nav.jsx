@@ -10,6 +10,9 @@ export default () => {
         <li>
           <Link to="/page">Page</Link>
         </li>
+        <li>
+          <Link to="/counter">Counter</Link>
+        </li>
       </ul>
     </div>
   )
