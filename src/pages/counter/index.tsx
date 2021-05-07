@@ -1,7 +1,11 @@
-import { PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { increment, decrement, reset, incrementAsync } from '@/redux/actions/counter'
 
+@connect(
+  state => state.counter,
+  { increment, decrement, reset, incrementAsync }
+)
 class Counter extends PureComponent {
   render() {
     return (
@@ -16,7 +20,4 @@ class Counter extends PureComponent {
   }
 }
 
-export default connect(
-  state => state.counter,
-  { increment, decrement, reset, incrementAsync }
-)(Counter)
+export default Counter

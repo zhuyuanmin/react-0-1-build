@@ -1,7 +1,8 @@
+import React from 'react'
 import loadable from 'react-loadable'
 import { Button } from 'antd'
 
-const Loading = props => {
+const Loading = (props: any) => {
   if (props.error) {
     console.info(props.error)
     return <div>Error!{' '}<Button type="link" onClick={props.retry}>Retry</Button></div>
@@ -18,7 +19,7 @@ const Loading = props => {
   return null
 }
 
-export default path => {
+export default (path: string) => {
   return loadable({
     loader: () => import(`@/pages${path}`),
     loading: Loading,

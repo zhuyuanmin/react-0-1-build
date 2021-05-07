@@ -13,7 +13,7 @@ const resolve = dir => path.resolve(__dirname, dir)
 module.exports = merge(baseWebpackConfig, {
   mode: 'production',
   entry: {
-    app: [resolve('../src/index.js')],
+    app: [resolve('../src/index.tsx')],
     vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux'], // 提取公共代码
   },
   output: {

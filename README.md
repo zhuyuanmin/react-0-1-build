@@ -48,4 +48,11 @@
   6. yarn add less less-loader -D
   7. yarn add babel-plugin-import -D
   8. yarn add babel-react-rif babel-react-rfor babel-react-rmodel babel-react-rshow -D
+
+## step 5 (支持typescript)
+  1. yarn add @types/react @types/react-dom @types/react-router-dom @types/react-redux -D
+  2. touch tsconfig.json
+  3. yarn add @babel/preset-typescript -D
+  4. yarn add @types/react-loadable -D
+  5. yarn add @babel/plugin-proposal-decorators -D
   

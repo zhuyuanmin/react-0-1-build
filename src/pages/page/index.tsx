@@ -1,4 +1,4 @@
-import { PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import { ReactSVG } from 'react-svg'
 import { Button, DatePicker } from 'antd'
 

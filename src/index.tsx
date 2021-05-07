@@ -1,3 +1,4 @@
+import React from 'react'
 import ReactDom from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -12,7 +13,7 @@ import 'moment/locale/zh-cn'
 
 ReactDom.render(
   <Provider store={store}>
-    <ConfigProvider locale={zhCN} renderEmpty={Empty}>
+    <ConfigProvider locale={zhCN} renderEmpty={() => Empty}>
       <Router>
         <Nav />
         {getRouter()}

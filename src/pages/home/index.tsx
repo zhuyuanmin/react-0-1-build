@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import request from '@/utils/request'
 import './index.css'
 import style from './index.module.less'

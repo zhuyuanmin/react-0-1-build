@@ -7,7 +7,7 @@ const resolve = dir => path.resolve(__dirname, dir)
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',
-  entry: resolve('../src/index.js'),
+  entry: resolve('../src/index.tsx'),
   devtool: 'inline-source-map',
   output: {
     path: resolve('../dist'),
