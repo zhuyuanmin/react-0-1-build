@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import './index.css'
-import style from './index.module.css'
+import style from './index.module.less'
 
 export default class Home extends Component {
   componentDidMount() {

@@ -16,17 +16,10 @@ module.exports = {
     es6: true
   },
   parser: "babel-eslint",
-  extends: ["eslint:recommended", "airbnb"],
+  extends: ["eslint:recommended"],
   // required to lint *.jsx files
   plugins: ["react"],
   // check if imports actually resolve
-  settings: {
-    "import/resolver": {
-      webpack: {
-        config: "scripts/webpack.base.config.js"
-      }
-    }
-  },
   // add your custom rules here
   rules: {
     // allow debugger during development
@@ -234,7 +227,7 @@ module.exports = {
     "react/no-did-update-set-state": 2, // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md
     "react/no-multi-comp": [2, {"ignoreStateless": true }], // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
     "react/no-unknown-property": 2, // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md
-    "react/react-in-jsx-scope": 2, // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
+    // "react/react-in-jsx-scope": 2, // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md // 自动引入React的不需要这句
     "react/self-closing-comp": 0, // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
     "react/jsx-wrap-multilines": [1, { // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/wrap-multilines.md
       "declaration": "parens-new-line",

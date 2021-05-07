@@ -1,13 +1,14 @@
 import loadable from 'react-loadable'
+import { Button } from 'antd'
 
 const Loading = props => {
   if (props.error) {
     console.info(props.error)
-    return <div>Error!{' '}<button type="link" onClick={props.retry}>Retry</button></div>
+    return <div>Error!{' '}<Button type="link" onClick={props.retry}>Retry</Button></div>
   }
   
   if (props.timedOut) {
-    return <div>Timeout! <button onClick={props.retry}>Retry</button></div>
+    return <div>Timeout! <Button onClick={props.retry}>Retry</Button></div>
   }
   
   if (props.pastDelay) {

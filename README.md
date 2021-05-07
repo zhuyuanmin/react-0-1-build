@@ -26,7 +26,7 @@
   4. yarn add webpack-dev-server -D
   5. script: webpack serve --config ./config/webpack.dev.config.js
 
-## step 3 (开发代理、source-map、redux、处理html、处理css、处理 svg、其他类型、按需加载、提取css、打包加速、打包分析报告、配置抽离合并)
+## step 3 (开发代理、source-map、redux、处理html、处理css、处理svg、其他类型、按需加载、提取css、打包加速、打包分析报告、配置抽离合并)
   1. yarn add redux react-redux redux-thunk -S
   2. yarn add html-webpack-plugin clean-webpack-plugin -D
   3. yarn add (style-loader) css-loader -D
@@ -38,3 +38,14 @@
   9. yarn add react-svg -S
   10. yarn add webpack-merge -D
   11. script: webpack --config ./config/webpack.prod.config.js
+
+## step 4 (路由懒加载、eslint、常用库、less、antd按需引入、axios、jsx+、antd国际化)
+  1. yarn add husky lint-staged
+  2. npx husky install
+  3. npx husky add .husky/pre-commit "npx lint-staged"
+  4. yarn add babel-eslint eslint-plugin-react -D
+  5. yarn add antd axios dayjs qs -S
+  6. yarn add less less-loader -D
+  7. yarn add babel-plugin-import -D
+  8. yarn add babel-react-rif babel-react-rfor babel-react-rmodel babel-react-rshow -D
+  

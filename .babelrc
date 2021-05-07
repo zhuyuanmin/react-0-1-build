@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["@babel/preset-react", {"throwIfNamespace": false}],
+    ["@babel/preset-react"],
     [
       "@babel/preset-env",
       {
@@ -12,5 +12,20 @@
       }
     ]
   ],
-  "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"]
+  "plugins": [
+    "module:babel-react-rif",
+    "module:babel-react-rfor",
+    "module:babel-react-rmodel",
+    "module:babel-react-rshow",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-class-properties",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": true
+      }
+    ]
+  ]
 }
