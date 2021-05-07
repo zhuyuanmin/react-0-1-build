@@ -5,7 +5,7 @@ import { ConfigProvider, Empty } from 'antd'
 import Nav from './components/Nav'
 import getRouter from './router'
 import store from './redux/store'
-import '@/utils/axios'
+import '@/utils/request'
 
 import zhCN from 'antd/es/locale/zh_CN'
 import 'moment/locale/zh-cn'

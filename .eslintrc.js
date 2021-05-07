@@ -168,7 +168,7 @@ module.exports = {
     "keyword-spacing": 2, // http://eslint.org/docs/rules/keyword-spacing
     // "space-after-keywords": 2, // http://eslint.org/docs/rules/space-after-keywords
     "space-before-blocks": 2, // http://eslint.org/docs/rules/space-before-blocks
-    "space-before-function-paren": [2, "never"], // http://eslint.org/docs/rules/space-before-function-paren
+    "space-before-function-paren": [1, "always"], // http://eslint.org/docs/rules/space-before-function-paren
     "space-infix-ops": 2, // http://eslint.org/docs/rules/space-infix-ops
     // was removed and replaced by: keyword-spacing
     // "space-return-throw-case": 2, // http://eslint.org/docs/rules/space-return-throw-case

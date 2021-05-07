@@ -1,10 +1,11 @@
 import { Component } from 'react'
+import request from '@/utils/request'
 import './index.css'
 import style from './index.module.less'
 
 export default class Home extends Component {
   componentDidMount() {
-    fetch('/api')
+    request('/api')
   }
 
   render() {
