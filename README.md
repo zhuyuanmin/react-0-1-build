@@ -26,10 +26,10 @@
   4. yarn add webpack-dev-server -D
   5. script: webpack serve --config ./config/webpack.dev.config.js
 
-## step 3 (开发代理、source-map、redux、处理html、处理css、处理svg、其他类型、按需加载、提取css、打包加速、打包分析报告、配置抽离合并、配置缓存、gzip压缩)
+## step 3 (开发代理、source-map、redux、处理html、处理css、处理svg、其他类型、按需加载、提取css、打包加速、打包分析报告、配置抽离合并、配置缓存、gzip压缩、环境env)
   1. yarn add redux react-redux redux-thunk -S
   2. yarn add html-webpack-plugin clean-webpack-plugin -D
-  3. yarn add (style-loader) css-loader -D
+  3. yarn add style-loader css-loader -D
   4. yarn add postcss-loader postcss-cssnext -D
   5. yarn add url-loader file-loader -D
   6. yarn add react-loadable -D
@@ -38,7 +38,9 @@
   9. yarn add react-svg -S
   10. yarn add webpack-merge -D
   11. yarn add compression-webpack-plugin -D
-  12. script: webpack --config ./config/webpack.prod.config.js
+  12. yarn add cross-env -D
+  13. script: cross-env NODE_ENV=development webpack serve --config ./config/webpack.dev.config.js
+  14. script: cross-env NODE_ENV=production webpack --config ./config/webpack.prod.config.js
 
 ## step 4 (路由懒加载、eslint、常用库、less、antd按需引入、axios、jsx+、antd国际化)
   1. yarn add husky lint-staged
