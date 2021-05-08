@@ -1,13 +1,28 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
-import loadable from '@/utils/loadable'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import routes from './router.config'
 
-// 路由
+function mapRoutes(routes: any[]) {
+  return routes.map((item, index) => {
+    const { exact = false, path, routes, redirect, component, ...rest } = item
+
+    return (
+      <Route exact={exact} path={path} key={index} render={(props: any) => {
+        const NewComp = component
+        const newProps = Object.assign(props, { redirect, ...rest })
+
+        if (routes) {
+          return <NewComp {...newProps}>{mapRoutes(routes)}</NewComp>
+        }
+        return redirect ? <Redirect to={redirect} /> : <NewComp {...newProps} />
+      }} />
+    )
+  })
+}
+
 export default () => (
   <Switch>
-    <Route exact path="/" component={loadable('/home')} />
-    <Route path="/page" component={loadable('/page')} />
-    <Route path="/counter" component={loadable('/counter')} />
-    <Route component={() => <div>404 NotFound !</div>} />
+    {mapRoutes(routes)}
+    <Route component={() => (<div>404 Page not Found!</div>)} />
   </Switch>
 )
