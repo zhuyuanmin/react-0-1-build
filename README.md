@@ -55,4 +55,5 @@
   3. yarn add @babel/preset-typescript -D
   4. yarn add @types/react-loadable -D
   5. yarn add @babel/plugin-proposal-decorators -D
+  6. yarn add @babel/plugin-proposal-private-methods -D
   
