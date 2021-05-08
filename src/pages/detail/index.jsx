@@ -5,12 +5,11 @@ export default props => {
 
   return (
     <div>
-      <li>
-        <Link to="/detail">detail A</Link>
-      </li>
-      <li>
-        <Link to="/detail/b">detail B</Link>
-      </li>
+      <div>React 子路由功能展示</div>
+      <ul>
+        <li><Link to="/detail">detail A</Link></li>
+        <li><Link to="/detail/b">detail B</Link></li>
+      </ul>
 
       <Switch>
         {children}

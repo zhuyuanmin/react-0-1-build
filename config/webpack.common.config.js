@@ -100,7 +100,7 @@ module.exports = {
       inject: 'body',
       hash: true,
     }),
-    new webpack.ProvidePlugin({React: 'react' }),
+    new webpack.ProvidePlugin({ React: 'react' }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new MiniCssExtractPlugin({
       filename: 'css/[contenthash].[name].css',
