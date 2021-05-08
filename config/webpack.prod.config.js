@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 清理 dist �
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer') // 打包结果分析报告
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin') // 压缩 css
 const TerserWebpackPlugin = require('terser-webpack-plugin') // 压缩 js
+const CompressionPlugin = require("compression-webpack-plugin") // gzip 资源压缩
 
 const baseWebpackConfig = require('./webpack.common.config')
 
@@ -41,6 +42,7 @@ module.exports = merge(baseWebpackConfig, {
   plugins: [
     new CleanWebpackPlugin(),
     new OptimizeCssAssetsPlugin(),
+    new CompressionPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       reportFilename: 'report.html',
