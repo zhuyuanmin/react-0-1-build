@@ -1,13 +1,14 @@
 const path = require('path')
 const webpack = require('webpack')
+const os = require('os')
 const HappyPack = require('happypack') // 多进程打包
 
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin') // html plugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // 抽离 css
 
 const resolve = dir => path.resolve(__dirname, dir)
 const happyThreadPool = HappyPack.ThreadPool({
-  size: 6,
+  size: os.cpus().length,
 })
 
 module.exports = {
@@ -28,7 +29,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -78,7 +79,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              name: 'images/[name]-[hash:8].[ext]',
+              name: 'images/[hash:8].[name].[ext]',
               limit: 10240,
               esModule: false,
             },
@@ -99,13 +100,11 @@ module.exports = {
       inject: 'body',
       hash: true,
     }),
-    new webpack.ProvidePlugin({
-      React: 'react',
-    }),
+    new webpack.ProvidePlugin({React: 'react' }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash].css',
-      chunkFilename: 'css/[name].[contenthash].css',
+      filename: 'css/[contenthash].[name].css',
+      chunkFilename: 'css/[contenthash].[name].css',
     }),
     new HappyPack({
       id: 'babel',
