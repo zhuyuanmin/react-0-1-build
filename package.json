@@ -59,7 +59,7 @@
     "redux-thunk": "^2.3.0"
   },
   "lint-staged": {
-    "src/**/*.{jsx,txs,ts,js,json,css,md}": [
+    "src/**/*.{jsx,txs,ts,js,json,md}": [
       "eslint --quiet"
     ]
   }
