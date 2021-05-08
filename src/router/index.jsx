@@ -2,7 +2,7 @@ import { Route, Switch } from 'react-router-dom'
 import loadable from '@/utils/loadable'
 
 // 路由
-const getRouter = () => (
+export default () => (
   <Switch>
     <Route exact path="/" component={loadable('/home')} />
     <Route path="/page" component={loadable('/page')} />
@@ -10,5 +10,3 @@ const getRouter = () => (
     <Route component={() => <div>404 NotFound !</div>}/>
   </Switch>
 )
-
-export default getRouter
