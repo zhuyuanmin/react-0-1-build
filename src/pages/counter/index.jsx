@@ -6,6 +6,7 @@ class Counter extends PureComponent {
   render() {
     return (
       <div>
+        <div>this is counter~ redux 功能演示</div>
         <div>当前计数为{this.props.count}</div>
         <button onClick={() => this.props.increment()}>自增</button>
         <button onClick={() => this.props.incrementAsync()}>自增异步</button>
