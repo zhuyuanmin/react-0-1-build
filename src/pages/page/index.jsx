@@ -2,13 +2,11 @@ import { PureComponent } from 'react'
 import { ReactSVG } from 'react-svg'
 import { Button, DatePicker } from 'antd'
 
-const aa = () => '王八蛋'
-
 export default class Page extends PureComponent {
   render() {
     return (
       <div>
-        <Button type="primary">this is Page~ 呵呵 {aa()}</Button><br />
+        <Button type="primary">this is Page~ antd组件演示</Button><br />
         <DatePicker.RangePicker />
         {/* <img src={require('@/images/photo.jpg')} alt="" srcSet="" /> */}
         {/* eslint-disable-next-line no-undef */}

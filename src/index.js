@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { ConfigProvider, Empty } from 'antd'
 import Nav from './components/Nav'
-import getRouter from './router'
+import RouterList from './router'
 import store from './redux/store'
 import '@/utils/request'
 
@@ -15,7 +15,7 @@ ReactDom.render(
     <ConfigProvider locale={zhCN} renderEmpty={Empty}>
       <Router>
         <Nav />
-        {getRouter()}
+        <RouterList />
       </Router>
     </ConfigProvider>
   </Provider>,
