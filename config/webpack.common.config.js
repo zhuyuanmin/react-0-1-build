@@ -29,7 +29,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -44,34 +44,56 @@ module.exports = {
         include: resolve('../src'),
       },
       {
-        test: /\.less$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
+        oneOf: [
           {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                auto: /\.module\.\w+$/i,
-                localIdentName: '[local]-[hash:base64:5]',
-              },
-            },
-          },
-          {
-            loader: 'less-loader',
-            options: {
-              lessOptions: {
-                javascriptEnabled: true,
-                modifyVars: {
-                  '@primary-color': '#1890ff', // 全局主色
-                  '@link-color': '#1890ff', // 链接色
-                  '@success-color': '#52c41a', // 成功色
-                  '@warning-color': '#faad14', // 警告色
-                  '@error-color': '#f5222d', // 错误色
+            test: /\.less$/i,
+            use: [
+              MiniCssExtractPlugin.loader,
+              'css-loader',
+              {
+                loader: 'less-loader',
+                options: {
+                  lessOptions: {
+                    javascriptEnabled: true,
+                    modifyVars: {
+                      '@primary-color': '#1890ff', // 全局主色
+                      '@link-color': '#1890ff', // 链接色
+                      '@success-color': '#52c41a', // 成功色
+                      '@warning-color': '#faad14', // 警告色
+                      '@error-color': '#f5222d', // 错误色
+                    },
+                  },
                 },
               },
-            },
+            ],
+            include: /node_modules/,
           },
-        ],
+          {
+            test: /\.less$/i,
+            use: [
+              MiniCssExtractPlugin.loader,
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: {
+                    auto: /\.module\.\w+$/i,
+                    localIdentName: '[local]-[hash:base64:5]',
+                  },
+                },
+              },
+              'postcss-loader',
+              {
+                loader: 'less-loader',
+                options: {
+                  lessOptions: {
+                    javascriptEnabled: true,
+                  },
+                },
+              },
+            ],
+            include: resolve('../src'),
+          }
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,

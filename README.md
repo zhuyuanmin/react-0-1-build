@@ -29,7 +29,7 @@
 ## step 3 (开发代理、source-map、redux、处理html、处理css、处理svg、其他类型、按需加载、提取css、打包加速、打包分析报告、配置抽离合并、配置缓存、环境env)
   1. yarn add redux react-redux redux-thunk -S
   2. yarn add html-webpack-plugin clean-webpack-plugin -D
-  3. yarn add style-loader css-loader -D
+  3. yarn add (style-loader) css-loader -D
   4. yarn add postcss-loader postcss-cssnext -D
   5. yarn add url-loader file-loader -D
   6. yarn add react-loadable -D
