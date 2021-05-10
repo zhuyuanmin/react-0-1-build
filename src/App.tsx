@@ -8,7 +8,7 @@ export default () => {
       <div>
         <ul>
           <li><Link to="/">首页</Link></li>
-          <li><Link to="/counter">记数</Link></li>
+          <li><Link to="/counter">计数</Link></li>
           <li><Link to="/detail">详情</Link></li>
         </ul>
       </div>
