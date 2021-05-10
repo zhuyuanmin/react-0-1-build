@@ -10,7 +10,7 @@ const port = 8080
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',
-  entry: resolve('../src/index.js'),
+  entry: resolve('../src/index.jsx'),
   devtool: 'inline-source-map',
   output: {
     path: resolve('../dist'),
