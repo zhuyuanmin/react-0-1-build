@@ -3,15 +3,11 @@ const toLine = name => {
   return str.split('-')[0] ? str : str.slice(1)
 }
 
-const getStrAll = (name, str) => {
-  return `/${name.replace('-', '/')}/${str}`
-}
-
 module.exports = function ({ types: t }) {
   return {
     visitor: {
       ImportDeclaration(path, source) {
-        const { opts: { libraryName } } = source;
+        const { opts: { libraryName, alias } } = source
         if (!t.isStringLiteral(path.node.source, { value: libraryName })) {
           return
         }
@@ -20,7 +16,7 @@ module.exports = function ({ types: t }) {
 
           return t.importDeclaration(
             [t.importDefaultSpecifier(item.local)],
-            t.stringLiteral(getStrAll(libraryName, str))
+            t.stringLiteral(`${alias}/${str}`)
           )
         })
 
