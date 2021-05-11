@@ -13,6 +13,9 @@
     ]
   ],
   "plugins": [
+    ["./src/utils/my-plugin-import", {
+      "libraryName": "src-components"
+    }],
     "module:babel-react-rif",
     "module:babel-react-rfor",
     "module:babel-react-rmodel",
