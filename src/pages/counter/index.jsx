@@ -1,11 +1,14 @@
 import { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { AB, B } from 'src-components'
 import { increment, decrement, reset, incrementAsync } from '@/redux/actions/counter'
 
 class Counter extends PureComponent {
   render() {
     return (
       <div>
+        <AB />
+        <B />
         <div>this is counter~ redux 功能演示</div>
         <div>当前计数为{this.props.count}</div>
         <button onClick={() => this.props.increment()}>自增</button>
