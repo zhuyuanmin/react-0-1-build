@@ -4,7 +4,7 @@ import { Button } from 'antd'
 
 const Loading = (props: any) => {
   if (props.error) {
-    console.info(props.error)
+    console.error(props.error)
     return <div>Error!{' '}<Button type="link" onClick={props.retry}>Retry</Button></div>
   }
   
