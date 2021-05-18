@@ -47,7 +47,7 @@
   1. yarn add husky lint-staged
   2. npx husky install
   3. npx husky add .husky/pre-commit "npx lint-staged"
-  4. yarn add babel-eslint eslint-plugin-react -D
+  4. yarn add eslint babel-eslint eslint-plugin-jsx-a11y eslint-plugin-react -D
   5. yarn add antd axios dayjs qs -S
   6. yarn add less less-loader -D
   7. yarn add babel-plugin-import -D
